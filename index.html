@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1">
+    <title>Nothing is Impossible TecH</title>
+
+<script>
+
+    let head = document.getElementsByTagName('HEAD')[0];
+    let link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'White.css';
+    head.appendChild(link);
+    function mineB(){
+        
+        link.href = 'black.css';
+        head.appendChild(link);
+       
+    }
+    function mineW(){
+        link.href = 'white.css';
+        head.appendChild(link);
+    }
+    
+</script>
+
+</head>
+<body>
+
+    <header>
+        <div class="head-box">
+            <div>
+            <img id="logo" src="logo.jpg" alt="NiiTecH">
+
+            </div>
+            <div>
+                <h1 id="heading">Abinesh Muthukrishnan</h1>
+            <h1 id="slogan">Nothing is Impossible </h1>
+            </div>
+        </div>
+    </header>
+<script>
+  // Select all anchor links that start with '#'
+  const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+
+  // Add a click event listener to each link
+  smoothScrollLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent the default link behavior
+
+      const targetId = this.getAttribute('href').substring(1); // Remove the '#' from the href
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth' // Smooth scrolling
+        });
+      }
+    });
+  });
+</script>
+    <nav>
+        <div class="tabs">
+            <ul>
+                <li><a href="#tab0">Home</a></li>
+                <li><a href="#tab1">Education</a></li>
+                <li><a href="#tab2">Achievements</a></li>
+                <li><a href="#tab3">Contact Us</a></li>
+                <li><a href="#tab4">About</a></li>
+                <li id="ser"style="margin-left: 100;"><input class="search-box"  placeholder="Search Here" type="text"><input type="button" class="search-btn" value="Search"></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img1.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img2.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img3.jpg" style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+    <div class="ad">
+        <h2>Stay Connected With Us :</h2>
+        <input type="button" id="sub" onclick="javascript:window.location.href='www.youtube.com/@niitech'" value="Subscribe"><br>
+        <input type="button" id="blog" onclick="javascript:window.location.href='niitec.blogspot.com'" value="Blogger">
+
+    </div>
+
+    <aside>
+        <div id="theme">
+            <h3>Theme : </h3>
+            <input type="button" id="b" onclick="mineB()" value="Dark">
+            <input type="button" id="w" onclick="mineW()" value="Light">
+
+        </div>
+        <div><h2 align="center">Profile</h2>
+            <img src="logo.jpg" alt="profile">
+            <h3>M Abinesh B.Sc-CS</h3>
+            <p>Founder of Nothing is <br>   Impossible Tech, <br>Certified Ethical Hacker, <br> Full stack developer, <br>Youtuber, Etc,. <br></p>
+        </div>
+        <div>
+            <h3>Keep in Touch With:</h3>
+            <input type="button" id="sub" onclick="javascript:window.location.href='www.youtube.com/@niitech'" value="Subscribe"><br>
+            <input type="button" id="blog" onclick="javascript:window.location.href='niitec.blogspot.com'" value="Blogger">
+
+        </div>
+        <div>
+            <h4> <br>Menu</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Achievements</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4> <br>Programming languages </h4>
+            <ul>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">C++</a></li>
+                <li><a href="#">C# </a></li>
+                <li><a href="#">JS</a></li>
+            </ul>
+        </div>
+    </aside>
+
+<script>
+
+// Get all tab elements
+const tabs = document.querySelectorAll('.tabs li a');
+const tabContents = document.querySelectorAll('.container1');
+const ta = document.querySelectorAll('.container1.active');
+
+// Add a click event listener to each tab
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove the 'active' class from all tabs and tab contents
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        ta.innerHTML='';
+        // Add the 'active' class to the clicked tab and its corresponding content
+        tab.classList.add('active');
+        const targetId = tab.getAttribute('href').substring(1);
+        const targetContent = document.getElementById(targetId);
+        targetContent.classList.add('active');
+    });
+});
+
+// Set the first tab as active by default
+tabs[0].click();
+
+</script>
+
+
+    <div class="container1">
+        
+    <article>
+       
+ <div id="tab0" class="container">
+            
+</div>
+         <h2>Education : <br></h2>
+        <div id="tab1" class="container">
+            <div><p>SSLC</p><p>Gov.Hr.Sec.School <br>Panagudi </p></div>
+            <div><p>HSC</p><p>Gov.Hr.Sec.School <br>Panagudi </p></div>
+            <div><p>DME <br><br>KNSK Polytechnic College <br>Chenbagaramanputhoor </p></div>
+            <div><p>BSc-CS</p><p>Udaya Arts and Science College <br>Vellamodi</p></div>
+            <div><p>Python</p><p>Sololearn </p></div>
+ <div><p>Web Development</p><p>Sololearn </p></div>
+
+
+        </div>
+        <h2>Known Computer Languages<br></h2>
+
+        <div id="tab2" class="container">
+            <div><p>Python</p></div>
+            <div><p>HTML</p></div>
+            <div><p>CSS</p></div>
+            <div><p>Java Script</p></div>
+            <div><p>PHP</p></div>
+ <div><p>MySQL</p></div>
+ 
+
+        </div>
+        <h2>Hobbies: <br></h2>
+
+        <div id="tab3" class="container">
+            <div><p>YouTuber</p></div>
+            <div><p>Blogging </p></div>
+            <div><p>Web Development</p></div>
+            <div><p>Programming</p></div>
+            <div><p>Bug Boundry</p></div>
+
+        </div>
+        <div class="page">
+            <div id="ntx-btn"><input type="button"  value="next page "></div>
+            <div><input type="button" id="pre-btn" value="Prev. page"></div>
+            
+        </div>
+    </article>
+    </div>
+    <section>
+        <form action="">
+            <fieldset>
+                <legend>Feedback</legend>
+                <label for="name">Enter your name : </label>
+                <input type="text"><br>
+                <label for="email">Enter your Email : </label>
+                <input type="email"><br>
+                <label for="fback">Enter Your Feedback </label>
+                <br><textarea name="feed" id="" cols="100"  rows="10"></textarea>
+                <br><input type="submit">
+            </fieldset>
+        </form>
+    </section>
+    
+    
+    <footer>
+        <div>
+            <h3>Contact : <br></h3>
+            <p>Email : www.abineshferrari129@gmail.com </p>
+            <p><br>Mobile : 9524943310</p>
+
+        </div>
+        <div>
+            <h3>Keep in Touch With:</h3>
+            <input type="button" id="sub" onclick="javascript:window.location.href='www.youtube.com/@niitech'" value="Subscribe"><br>
+            <input type="button" id="blog" onclick="javascript:window.location.href='niitec.blogspot.com'" value="Blogger">
+
+        </div>
+        <div>
+            <h3>Developer Info</h3>
+            <p>This Website Developed and Maintained by Abinesh from NiiTech, All rights Reserved. <br> &copy NiiTecH </p>
+        </div>
+    </footer>
+</body>
+</html>
